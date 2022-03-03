@@ -2,6 +2,12 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -86,6 +92,20 @@ public class Utility {
         res[row][col] = randVal;
         res[col][row] = randVal;
       }
+    }
+
+    return res;
+  }
+
+  public static ArrayList<Integer> ReadFileToList(String fileName) {
+    ArrayList<Integer> res = new ArrayList<>();
+
+    try {
+      List<String> allLines = Files.readAllLines(Paths.get(fileName));
+      allLines.forEach(e -> res.add(Integer.parseInt(e)));
+
+    } catch (IOException e) {
+      System.out.println("File not found" + e.getMessage());
     }
 
     return res;
