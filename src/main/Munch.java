@@ -34,7 +34,7 @@ public class Munch {
       System.out.println("iter: " + i + ", f: " + f + ", newF: " + newF);
 
       if (f > newF) {
-        sol = new ClusterSol(oldSol.getCluster());
+        sol.setCluster(oldSol.getCluster());
       } else {
         f = newF;
       }

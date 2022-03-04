@@ -59,6 +59,10 @@ public class ClusterSol {
     return cluster;
   }
 
+  public void setCluster(ArrayList<Integer> cluster) {
+    this.cluster = cluster;
+  }
+
   @Override
   public String toString() {
     return "ClusterSol: " + cluster;
