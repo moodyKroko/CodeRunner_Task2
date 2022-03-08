@@ -51,16 +51,14 @@ public class ClusterSol {
     int randValue;
 
     while (true) {
-      randIndex = Utility.UI(1, res.size() - 1);
+      randIndex = Utility.UI(0, res.size() - 1);
       randValue = Utility.UI(1, res.size() - 1);
 
       if (randIndex == randValue) {
-        System.out.println("randIndex and randValue were similar");
         continue; // if same restarts
       }
 
       if (res.get(randIndex) == randValue) {
-        System.out.println("random value was similar");
         continue; // if element and random generated are same restarts
       }
 

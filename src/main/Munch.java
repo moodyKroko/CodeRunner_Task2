@@ -31,8 +31,6 @@ public class Munch {
       sol.smallChange();
       int newF = sol.evmFitness(mdg);
 
-      System.out.println("iter: " + i + ", f: " + f + ", newF: " + newF);
-
       if (f > newF) {
         sol.setCluster(oldSol.getCluster());
       } else {
@@ -40,7 +38,6 @@ public class Munch {
       }
     }
 
-    System.out.println("Fitness value: " + f);
     return sol.getCluster();
   }
 

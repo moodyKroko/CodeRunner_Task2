@@ -105,7 +105,11 @@ class MunchTest {
   @Test
   @DisplayName("Test Munch with Perfect78")
   void testPerfect78Munch() {
-    System.out.println(Munch.MunchAlgo(3000, mdgP78));
+    for (int i = 0; i < 10; i++) {
+//      System.out.println(Munch.MunchAlgo(5000, mdgP78));
+      ClusterSol sol = new ClusterSol(Munch.MunchAlgo(5000, mdgP78));
+      System.out.print(sol.evmFitness(mdgP78) + ", ");
+    }
   }
 
 
