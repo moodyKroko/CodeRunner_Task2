@@ -14,7 +14,7 @@ public class ClusterSol {
 
   /**
    * This method takes in 2D int array which is symmetrical and
-   * should only contain 0 or 1.
+   * should only contain 0 or 1. It calculates fitness based on the cluster arrangements.
    *
    * @param mdg a symmetrical 2D matrix of 0's and 1's
    * @return fitness value of int
