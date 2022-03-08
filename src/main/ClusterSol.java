@@ -47,8 +47,25 @@ public class ClusterSol {
   public void smallChange() {
     ArrayList<Integer> res = new ArrayList<>(cluster);
 
-    int randIndex = Utility.UI(1, res.size() - 1);
-    int randValue = Utility.UI(1, res.size() - 1);
+    int randIndex;
+    int randValue;
+
+    while (true) {
+      randIndex = Utility.UI(1, res.size() - 1);
+      randValue = Utility.UI(1, res.size() - 1);
+
+      if (randIndex == randValue) {
+        System.out.println("randIndex and randValue were similar");
+        continue; // if same restarts
+      }
+
+      if (res.get(randIndex) == randValue) {
+        System.out.println("random value was similar");
+        continue; // if element and random generated are same restarts
+      }
+
+      break;
+    }
 
     // replace element at the specific index
     res.set(randIndex, randValue);
