@@ -3,13 +3,17 @@ package test;
 import static main.Munch.validMDG;
 import static main.Utility.ReadArrayFile;
 import static main.Utility.ReadFileToList;
+import static main.Utility.UI;
+import static main.Utility.mdgMatrix;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
 import main.ClusterSol;
 import main.Munch;
+import main.Utility;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -105,11 +109,23 @@ class MunchTest {
   @Test
   @DisplayName("Test Munch with Perfect78")
   void testPerfect78Munch() {
+    ClusterSol sol = null;
+    ArrayList<ClusterSol> solList = new ArrayList<>();
+
     for (int i = 0; i < 10; i++) {
-//      System.out.println(Munch.MunchAlgo(5000, mdgP78));
-      ClusterSol sol = new ClusterSol(Munch.MunchAlgo(5000, mdgP78));
+      sol = new ClusterSol(Munch.MunchAlgo(7000, mdgP78));
+      solList.add(sol);
       System.out.print(sol.evmFitness(mdgP78) + ", ");
     }
+
+    ClusterSol bestSol = solList.get(0);
+    for (ClusterSol sols : solList) {
+      if (bestSol.evmFitness(mdgP78) < sols.evmFitness(mdgP78)) {
+        bestSol.setCluster(sols.getCluster());
+      }
+    }
+
+    System.out.println("\nBest fitness: " + bestSol.evmFitness(mdgP78) + "\n" + bestSol);
   }
 
 

@@ -51,8 +51,8 @@ public class ClusterSol {
     int randValue;
 
     while (true) {
-      randIndex = Utility.UI(0, res.size() - 1);
-      randValue = Utility.UI(1, res.size() - 1);
+      randIndex = Utility.UI(1, res.size() - 1);
+      randValue = Utility.UI(2, res.size() - 1);
 
       if (randIndex == randValue) {
         continue; // if same restarts

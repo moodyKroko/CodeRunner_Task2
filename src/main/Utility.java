@@ -78,7 +78,7 @@ public class Utility {
    * @param len length of the array size
    * @return 2D array with equal row and column size
    */
-  public int[][] mdgMatrix(int len) {
+  public static int[][] mdgMatrix(int len) {
     int[][] res = new int[len][len];
 
     for (int row = 0; row < len; row++) {
