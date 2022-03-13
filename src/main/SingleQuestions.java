@@ -1,5 +1,7 @@
 package main;
 
+//import static main.CS2004.UI;
+
 import java.util.ArrayList;
 
 public class SingleQuestions {
@@ -38,7 +40,7 @@ public class SingleQuestions {
 
         if (c1 == c2) {
           // EVM = EVM + 2*M[j][k] – 1
-          evm = evm + 2 * mdg[row][col] - 1;
+          evm += ((2 * mdg[row][col]) - 1);
         }
       }
     }
@@ -50,8 +52,16 @@ public class SingleQuestions {
 //  public static ArrayList<Integer> smallChange(ArrayList<Integer> cArrangement) {
 //    ArrayList<Integer> res = new ArrayList<>(cArrangement);
 //
-//    int randIndex = Utility.UI(1, res.size() - 1);
-//    int randValue = Utility.UI(1, res.size());
+//    int randIndex = UI(0, res.size() - 1);
+//    int randValue = UI(1, res.size());
+//
+//    while (true) {
+//      if ((randIndex == randValue) || (res.get(randIndex) == randValue)) {
+//        randValue = UI(1, res.size() - 1);
+//      } else {
+//        break;
+//      }
+//    }
 //
 //    // replace element at the specific index
 //    res.set(randIndex, randValue);
