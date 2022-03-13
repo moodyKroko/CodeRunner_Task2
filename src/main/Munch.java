@@ -49,7 +49,7 @@ public class Munch {
    * @return {@code boolean} true/false
    */
   public static boolean validMDG(int[][] mdg) {
-    if (mdg == null || mdg.length == 0) {
+    if (mdg == null || mdg.length <= 1) {
       return false;
     }
 
